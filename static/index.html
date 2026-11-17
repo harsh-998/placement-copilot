@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Placement Copilot · Multi-Agent</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%278%27 fill=%27%236d8cff%27/%3E%3Ctext x=%2716%27 y=%2721%27 font-size=%2714%27 text-anchor=%27middle%27 font-family=%27Arial%27 font-weight=%27700%27 fill=%27%230b0f17%27%3EPC%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">PC</div>
+      <div>
+        <div class="brand-name">Placement Copilot</div>
+        <div class="brand-sub">Multi-agent career &amp; placement prep</div>
+      </div>
+    </div>
+    <div class="top-right">
+      <span id="llmPill" class="pill">…</span>
+      <select id="studentSelect" title="Switch student"></select>
+      <button class="btn ghost" id="newStudentBtn">+ New student</button>
+    </div>
+  </header>
+
+  <div class="layout">
+    <nav class="sidebar" id="nav">
+      <a data-view="dashboard" class="active"><span>◎</span>Dashboard</a>
+      <a data-view="resume"><span>▤</span>Resume</a>
+      <a data-view="jobs"><span>◈</span>Jobs</a>
+      <a data-view="gaps"><span>◇</span>Skill Gap</a>
+      <a data-view="roadmap"><span>▦</span>Roadmap</a>
+      <a data-view="interview"><span>◉</span>Mock Interview</a>
+      <a data-view="agents"><span>⬡</span>How it works</a>
+    </nav>
+
+    <main id="main"></main>
+
+    <aside class="activity">
+      <div class="activity-head">
+        <div>
+          <div class="h3">Agent activity</div>
+          <div class="muted small">Live trace from the orchestrator</div>
+        </div>
+        <span id="busyDot" class="dot"></span>
+      </div>
+      <div id="pipeline" class="pipeline"></div>
+      <div id="feed" class="feed"></div>
+    </aside>
+  </div>
+
+  <div id="toast" class="toast"></div>
+  <script src="/static/app.js"></script>
+</body>
+</html>
